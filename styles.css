@@ -1,0 +1,115 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
+    font-size: 20px;
+    background: linear-gradient(to bottom left,
+            #ff641c 0%,
+            #ffc831 49%,
+            #ffe923 51%,
+            #ff5d12 100%);
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.411);
+    font-size: 100px;
+}
+
+.page-h2{
+
+    color: rgba(0, 0, 0, 0.411);
+    font-size: 50px;
+    margin: 50px 0px;
+}
+
+
+.button-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-inline: 50px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.todo-div{
+    background-color: rgba(0, 0, 0, 0.253);
+    padding:40px;
+    border-radius: 30px;
+}
+
+.todo-text{
+
+    padding:10px;
+    margin:10px;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.829);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+    text-align: center;
+
+}
+ul li {
+    list-style: none;
+}
+
+.btn-list{
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.274);
+    color:white;
+    border-radius: 10px;
+
+}
+input{
+    padding:10px;
+    border: none;
+    outline: none;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clicky {
+    color:white;
+    flex: 1 1 auto;
+    background: rgba(0, 0, 0, 0.116);
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.349);
+}
+
+.blue {
+    background-color: rgba(0, 119, 255, 0.836);
+}
+
+.blue:hover {
+    background-color: rgba(67, 155, 255, 0.938);
+}

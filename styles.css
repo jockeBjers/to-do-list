@@ -23,7 +23,7 @@ h1 {
     font-size: 100px;
 }
 
-.page-h2{
+.page-h2 {
 
     color: rgba(0, 0, 0, 0.411);
     font-size: 50px;
@@ -40,16 +40,16 @@ h1 {
     justify-content: space-evenly;
 }
 
-.todo-div{
+.todo-div {
     background-color: rgba(0, 0, 0, 0.253);
-    padding:40px;
+    padding: 40px;
     border-radius: 30px;
 }
 
-.todo-text{
+.todo-text {
 
-    padding:10px;
-    margin:10px;
+    padding: 10px;
+    margin: 10px;
     font-size: 32px;
     color: rgba(255, 255, 255, 0.829);
     background-color: rgba(0, 0, 0, 0.397);
@@ -57,25 +57,31 @@ h1 {
     text-align: center;
 
 }
+
 ul li {
     list-style: none;
 }
 
-.btn-list{
-    padding:10px;
+.btn-list,
+.remove-btn,
+.delete-btn {
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.274);
-    color:white;
+    color: white;
     border-radius: 10px;
-
 }
-input{
-    padding:10px;
+
+input {
+    padding: 10px;
     border: none;
     outline: none;
-    color:white;
+    color: white;
     background-color: rgba(0, 0, 0, 0.623);
 }
 
+.delete-btn {
+    margin-left: 10px;
+}
 
 
 
@@ -90,7 +96,7 @@ input{
 
 
 .clicky {
-    color:white;
+    color: white;
     flex: 1 1 auto;
     background: rgba(0, 0, 0, 0.116);
     border: none;

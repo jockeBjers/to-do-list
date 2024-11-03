@@ -6,35 +6,53 @@ buttons.forEach(button => {
     });
 });
 
-const container = document.querySelector(".todo-div");
-const input = document.querySelector(".todo-list");
+const input = document.querySelector(".summary-list");
+const additionalInput = document.querySelector(".details-list")
 const button = document.querySelector(".btn-list");
 const ul = document.querySelector(".ul-list");
 
 function addItem() {
-    const text = input.value;
-    if (text == '') {
-        alert("No empty messages!")
-    } else {
+    const mainText = input.value;
+    const additionalText = additionalInput.value;
+
+    if (mainText) {
         const li = document.createElement("li");
-        li.textContent = text;
-        li.classList.add("todo-text");
 
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-btn")
         deleteBtn.textContent = "X";
 
-           deleteBtn.addEventListener("click", () => {
+        deleteBtn.addEventListener("click", () => {
             li.remove();
-           }) 
+        })
 
-        li.appendChild(deleteBtn);
+        if (additionalText) {
+            const details = document.createElement("details");
+            const summary = document.createElement("summary");
+
+            summary.textContent = mainText;
+
+            details.appendChild(summary);
+
+            const extraContent = document.createElement("div");
+            extraContent.textContent = additionalText;
+            extraContent.classList.add("detail-text")
+            details.appendChild(extraContent);
+            li.appendChild(details);
+            summary.appendChild(deleteBtn);
+
+        } else {
+            li.textContent = mainText;
+            li.classList.add("li-text");
+            li.appendChild(deleteBtn);
+        }
+
         ul.appendChild(li);
-        input.value = '';
+        input.value = "";
+        additionalInput.value = "";
     }
-}
+}    
 
-/* add item event */
 button.addEventListener("click", addItem);
 
 input.addEventListener("keydown", (e) => {
@@ -47,7 +65,6 @@ input.addEventListener("keydown", (e) => {
 const resetBtn = document.querySelector(".remove-btn");
 
 resetBtn.addEventListener("click", () => {
-    input.value = '';
     while (ul.lastElementChild) {
         ul.removeChild(ul.lastElementChild);
     }

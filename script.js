@@ -1,59 +1,77 @@
-const buttons = document.querySelectorAll('.clicky');
-
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        this.classList.toggle("blue");
-    });
-});
 
 const input = document.querySelector(".summary-list");
-const additionalInput = document.querySelector(".details-list")
 const button = document.querySelector(".btn-list");
 const ul = document.querySelector(".ul-list");
 
 function addItem() {
     const mainText = input.value;
-    const additionalText = additionalInput.value;
 
-    if (mainText) {
+    if (mainText !== '') {
         const li = document.createElement("li");
 
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = mainText;
+
         const deleteBtn = document.createElement("button");
-        deleteBtn.classList.add("delete-btn")
+        deleteBtn.classList.add("delete-btn");
         deleteBtn.textContent = "X";
+
+        const additionalInputDiv = document.createElement("div");
+        additionalInputDiv.classList.add("additional-input-container");
+
+        const additionalInput = document.createElement("input");
+        additionalInput.type = "text";
+        additionalInput.placeholder = "Additional info";
+        additionalInput.classList.add("detail-input");
+
+        const addDetailBtn = document.createElement("button");
+        addDetailBtn.textContent = "+";
+        addDetailBtn.classList.add("btn-list");
+
+
+
+        additionalInputDiv.appendChild(additionalInput);
+        additionalInputDiv.appendChild(addDetailBtn);
 
         deleteBtn.addEventListener("click", () => {
             li.remove();
-        })
+        });
 
-        if (additionalText) {
-            const details = document.createElement("details");
-            const summary = document.createElement("summary");
+        details.appendChild(summary);
+        details.appendChild(additionalInputDiv);
 
-            summary.textContent = mainText;
+        addDetailBtn.addEventListener("click", () => {
+            if (additionalInput.value) {
+                const extraDetail = document.createElement("div");
+                extraDetail.textContent = additionalInput.value;
+                extraDetail.classList.add("detail-text");
 
-            details.appendChild(summary);
+                const detailDeleteBtn = document.createElement("button");
+                detailDeleteBtn.classList.add("delete-btn");
+                detailDeleteBtn.textContent = "X";
 
-            const extraContent = document.createElement("div");
-            extraContent.textContent = additionalText;
-            extraContent.classList.add("detail-text")
-            details.appendChild(extraContent);
-            li.appendChild(details);
-            summary.appendChild(deleteBtn);
+                detailDeleteBtn.addEventListener("click", () => {
+                    extraDetail.remove();
+                });
 
-        } else {
-            li.textContent = mainText;
-            li.classList.add("li-text");
-            li.appendChild(deleteBtn);
-        }
+                extraDetail.appendChild(detailDeleteBtn);
+                details.appendChild(extraDetail);
+
+                additionalInput.value = "";
+            }
+        });
+
+        li.appendChild(details);
+        summary.appendChild(deleteBtn);
 
         ul.appendChild(li);
         input.value = "";
-        additionalInput.value = "";
     }
-}    
+}
 
 button.addEventListener("click", addItem);
+
 
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {

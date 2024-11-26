@@ -5,22 +5,25 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 30px;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     font-size: 20px;
-    background: linear-gradient(to bottom left,
+/*     background: linear-gradient(to bottom left,
             #ff641c 0%,
             #ffc831 49%,
             #ffe923 51%,
-            #ff5d12 100%);
+            #ff5d12 100%); */
+            background-image: url("./mountains.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
 }
 
 h1 {
     color: rgba(0, 0, 0, 0.411);
     font-size: 100px;
+    text-align: center;
 }
 
 .page-h2 {
@@ -31,21 +34,13 @@ h1 {
     text-align: center;
 }
 
-
-.button-div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-inline: 50px;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
 .todo-div {
-    background-color: rgba(0, 0, 0, 0.253);
+    box-shadow: rgba(236, 187, 255, 0.94) 0px 3px 8px;
+    background-color: rgba(228, 228, 228, 0.9);
     padding: 40px;
-    border-radius: 30px;
-    margin: 30px 0px;
+    padding-inline: 100px;
+    height: 100vh;
+    width:30%;
 }
 
 .li-text {
@@ -54,7 +49,7 @@ h1 {
     margin-top: 10px;
     font-size: 32px;
     color: rgba(0, 0, 0, 0.534);
-    background-color:  #ffc831;
+    background-color: #ffc831;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -76,20 +71,47 @@ summary {
     justify-content: space-between;
 }
 
+summary:hover {
+    cursor: pointer;
+}
+
 .detail-text {
     font-size: 22px;
-    padding:5px;
-    padding-left:10px;
-    margin-inline: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 5px;
     color: rgba(0, 0, 0, 0.534);
-    background-color: #33333334;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+   /*  background-color: #33333334;     */
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid white;
 }
 
 
+
+
+.additional-input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.additional-input-container .btn-list {
+    border-radius: 0;
+}
+
+.additional-input-container .detail-input {
+    width: 100%;
+}
+
+.additional-input-container .delete-btn {
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
 
 .btn-list,
 .remove-btn,
@@ -99,10 +121,11 @@ summary {
     color: white;
     border-radius: 10px;
     border: none;
-    
+
 }
-.remove-btn{
-     margin-left: 5px;
+
+.remove-btn {
+    margin-left: 5px;
 }
 
 input {
@@ -113,34 +136,17 @@ input {
     background-color: rgba(0, 0, 0, 0.623);
 }
 
-.delete-btn {
+.btn-list {
+    background-color: #649712;
+}
+
+.delete-btn,
+.remove-btn {
     background-color: #ff5d12;
 }
 
+.detail-input {}
 
-
-
-
-
-
-
-
-
-
-
-
-.clicky {
-    color: white;
-    flex: 1 1 auto;
-    background: rgba(0, 0, 0, 0.116);
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 25px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: 0.5s;
-}
 
 button:hover {
     background: rgba(0, 0, 0, 0.349);

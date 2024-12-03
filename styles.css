@@ -9,27 +9,22 @@ body {
     min-height: 100vh;
     max-height: 100%;
     font-size: 20px;
-/*     background: linear-gradient(to bottom left,
-            #ff641c 0%,
-            #ffc831 49%,
-            #ffe923 51%,
-            #ff5d12 100%); */
-            background-image: url("./mountains.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+    background-image: url("./mountains.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
     color: rgba(0, 0, 0, 0.411);
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
 }
 
 .page-h2 {
 
     color: rgba(0, 0, 0, 0.637);
-    font-size: 50px;
+    font-size: 40px;
     margin: 50px 0px;
     text-align: center;
 }
@@ -40,7 +35,10 @@ h1 {
     padding: 40px;
     padding-inline: 100px;
     height: 100vh;
-    width:30%;
+    max-width: 500px;
+    width: 100%;
+    overflow-y: scroll;
+
 }
 
 .li-text {
@@ -81,7 +79,7 @@ summary:hover {
     padding-left: 10px;
     margin: 5px;
     color: rgba(0, 0, 0, 0.534);
-   /*  background-color: #33333334;     */
+    /*  background-color: #33333334;     */
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid white;
@@ -129,6 +127,7 @@ summary:hover {
 }
 
 input {
+    width: 100%;
     padding: 10px;
     border: none;
     outline: none;
@@ -145,8 +144,11 @@ input {
     background-color: #ff5d12;
 }
 
-.detail-input {}
-
+.input-line {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
 
 button:hover {
     background: rgba(0, 0, 0, 0.349);
@@ -158,4 +160,19 @@ button:hover {
 
 .blue:hover {
     background-color: rgba(67, 155, 255, 0.938);
+}
+
+
+@media (max-width: 500px) {
+    .todo-div {
+        padding: 20px;
+        padding-inline: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .todo-div {
+        padding: 10px;
+        padding-inline: 20px;
+    }
 }
